@@ -43,6 +43,7 @@ export default function PotluckUtensils(){
             <h1>What Utensils Will You Bring?</h1>
             <button onClick={handleFetchUtensils}>Fetch All Utensils</button>
             <ul>
+                {/* Display list of utensils */}
                 {utensilsDisplay}
             </ul>
         </>

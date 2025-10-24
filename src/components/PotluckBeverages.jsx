@@ -10,6 +10,7 @@ export default function PotluckBevs(){
     //iterate through the list
     for (let i = 0; i <drinks.length; i++){
 
+
         drinksDisplay.push(
         //adding drinks to list
         <li key={drinks[i].id}>
@@ -42,6 +43,7 @@ export default function PotluckBevs(){
             <h1>What Are You Bringing To Drink?? </h1>
             <button onClick={handleFetchBevs}>Fetch Drink List</button>
             <ul>
+                {/* Display list of drinks */}
                 {drinksDisplay}
             </ul>
         </>

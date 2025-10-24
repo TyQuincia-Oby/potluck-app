@@ -42,8 +42,11 @@ export default function PotluckMeals(){
             <h1>Welcome to Our Potluck Meals App!!</h1>
             <button onClick={handleFetchMeals}>Fetch Meal List</button>
             <ul>
+                {/* Display list of meals */}
                 {mealsDisplay}
             </ul>
+
+            {/* Utensil and Beverage components */}
             <PotluckUtensils />
             <PotluckBevs />
 
