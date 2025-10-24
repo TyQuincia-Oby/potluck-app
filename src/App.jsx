@@ -1,13 +1,14 @@
 import './App.css'
+import PotluckMeals from "../src/components/PotluckMeals";
 
 function App() {
-  //const [count, setCount] = useState(0)
 
   return (
     <>
+      <PotluckMeals />
       
     </>
-  )
+  );
 }
 
 export default App
