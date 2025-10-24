@@ -17,25 +17,29 @@ export default function PotluckMeals(){
             <li key ={meals[i].id}>
                 {meals[i].meal_name} by {meals[i].your_name} serves {meals[i].guests_served} ({meals[i].meal_type});
             </li>
-        )
+        );
     }
 
     //retreiving list of meals to display
     async function handleFetchMeals(){
-    console.log("Fetching meals...");
-    //Add fetch logic in next step
-    //below is storing result of fetch in a variable(const result)
-    const result = await supabase.from("potluck_meals").select();
-    
-    //storing the data retrieved (extraction of data)
-    const data = result.data;
+        console.log("Fetching meals...");
+        //Add fetch logic in next step
+        //below is storing result of fetch in a variable(const result)
+        const result = await supabase.from("potluck_meals").select();
+        
+        //storing the data retrieved (extraction of data)
+        const data = result.data;
 
-    //log the fetched data into console
-    console.log("Fetched data: ", data);
+        //log the fetched data into console
+        console.log("Fetched data: ", data);
 
-    //update the meals state with the data **json object in console **
-    setMeals(data);
-}
+        //update the meals state with the data **json object in console **
+        setMeals(data);
+    }
+
+    async function handleAddMeal(){
+        console.log("Adding Meal");
+    }
 
     return (
         <>
@@ -45,7 +49,27 @@ export default function PotluckMeals(){
                 {/* Display list of meals */}
                 {mealsDisplay}
             </ul>
-
+            <div>
+                <form onSubmit={handleAddMeal}>
+                    <label>
+                        Meal: <input type="text" name="mealName" />
+                    </label>
+                    <br/>
+                    <label>
+                        Your Name: <input type="text" name="yourName" />
+                    </label>
+                    <br/>
+                    <label>
+                        Serves: <input type="number" name="serves" />
+                    </label>
+                    <br/>
+                    <label>
+                        Kind of Dish: <input type="text" name="kindOfDish" />
+                    </label>
+                    <br/>
+                    <button type="submit">Add Meal</button>
+                </form>
+            </div>
             {/* Utensil and Beverage components */}
             <PotluckUtensils />
             <PotluckBevs />

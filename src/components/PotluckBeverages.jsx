@@ -10,7 +10,6 @@ export default function PotluckBevs(){
     //iterate through the list
     for (let i = 0; i <drinks.length; i++){
 
-
         drinksDisplay.push(
         //adding drinks to list
         <li key={drinks[i].id}>
@@ -37,6 +36,9 @@ export default function PotluckBevs(){
         setDrinks(data);
     }
 
+    async function handleAddDrink(){
+        console.log("Adding Drink...")
+    }
 
     return(
         <>
@@ -46,6 +48,27 @@ export default function PotluckBevs(){
                 {/* Display list of drinks */}
                 {drinksDisplay}
             </ul>
+            <div>
+                <form>
+                    <label>
+                        Drink: <input type="text" name="drinkName"></input>
+                    </label>
+                    <br/>
+                    <label>
+                        Your Name: <input type="text" name="yourName"></input>
+                    </label>
+                    <br/>
+                    <label>
+                        Serves: <input type="text" name="serves"></input>
+                    </label>
+                    <br/>
+                    <label>
+                        Type of Drink: <input type="text" name="drinkType"></input>
+                    </label>
+                    <br/>
+                    <button type="submit">Add Drink</button>
+                </form>
+            </div>
         </>
     );
 

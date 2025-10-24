@@ -37,6 +37,10 @@ export default function PotluckUtensils(){
         setUtensils(data);
     }
 
+    async function handleAddUtensil(){
+        console.log("Adding utensil");
+    }
+
 
     return(
         <>
@@ -46,6 +50,21 @@ export default function PotluckUtensils(){
                 {/* Display list of utensils */}
                 {utensilsDisplay}
             </ul>
+            <div>
+                <form onSubmit={handleAddUtensil}>
+                    <label>
+                        Utensil: <input type="text" name="utensilName" />
+                    </label>
+                    <br/>
+                    <label>
+                        Your Name: <input type="text" name="yourName" />
+                    </label>
+                    <br/>
+                        Used For: <input type="text" name="utensilType" />
+                    <br/>
+                    <button type="submit">Add Utensil</button>
+                </form>
+            </div>
         </>
     );
 
