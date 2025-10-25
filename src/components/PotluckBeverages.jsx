@@ -62,6 +62,7 @@ export default function PotluckBevs(){
         } else {
             console.log('Drink added successfully:' , data);
         }
+        //insert working properly
     }
 
     return(

@@ -71,6 +71,7 @@ export default function PotluckMeals(){
             console.log('Meal added successfully: ', data);
             //update UI to show success, new line (row) will be added
         }
+         //insert working properly
     }
 
     return (
