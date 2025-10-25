@@ -25,7 +25,7 @@ export default function PotluckMeals(){
         console.log("Fetching meals...");
         //Add fetch logic in next step
         //below is storing result of fetch in a variable(const result)
-        const result = await supabase.from("potluck_meals").select();
+        const result = await supabase.from("potluck_meals").select().order("your_name");
         
         //storing the data retrieved (extraction of data)
         const data = result.data;
@@ -37,8 +37,30 @@ export default function PotluckMeals(){
         setMeals(data);
     }
 
-    async function handleAddMeal(){
-        console.log("Adding Meal");
+    async function handleAddMeal(event){
+        console.log("handle add meal submitted");
+        console.log(event.target.elements.mealName.value);
+        console.log(event.target.elements.yourName.value);
+        console.log(event.target.elements.kindOfDish.value);
+        console.log(event.target.elements.serves.value);
+
+        //prevents page refreshing
+        event.preventDefault();
+
+        const mealName = event.target.elements.mealName.value;
+        const yourName = event.target.elements.yourName.value;
+        const kindOfDish = event.target.elements.kindOfDish.value;
+        const serves = event.target.elements.serves.value;
+
+        let newMeal = {
+            meal_name : mealName,
+            your_name : yourName,
+            meal_type : kindOfDish,
+            guests_served : parseInt(serves)
+        }
+
+        console.log(newMeal);
+
     }
 
     return (

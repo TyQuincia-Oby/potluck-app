@@ -25,7 +25,7 @@ export default function PotluckUtensils(){
         console.log("Fetching Utensils...");
 
          //below is storing result of fetch in a variable(const result)
-        const result = await supabase.from("potluck_utensils").select();
+        const result = await supabase.from("potluck_utensils").select().order("utensil_name");
 
         //storing the data retrieved (extraction of data)
         const data = result.data;
@@ -37,8 +37,22 @@ export default function PotluckUtensils(){
         setUtensils(data);
     }
 
-    async function handleAddUtensil(){
-        console.log("Adding utensil");
+    async function handleAddUtensil(event){
+        event.preventDefault();
+        console.log("handle add utensil submitted");
+        console.log(event.target.elements)
+
+        const utensilName = event.target.elements.utensilName.value;
+        const yourName = event.target.elements.yourName.value;
+        const utensilType = event.target.elements.utensilType.value;
+
+        let newUtensil = {
+            utensil_name : utensilName,
+            your_name : yourName,
+            utensil_type : utensilType
+        }
+
+        console.log(newUtensil);
     }
 
 

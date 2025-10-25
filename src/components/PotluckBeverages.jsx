@@ -24,7 +24,7 @@ export default function PotluckBevs(){
         console.log("Fetching beverages...");
 
          //below is storing result of fetch in a variable(const result)
-        const result = await supabase.from("potluck_beverages").select();
+        const result = await supabase.from("potluck_beverages").select().order("guests_served",{ascending:false});
 
         //storing the data retrieved (extraction of data)
         const data = result.data;
@@ -36,8 +36,26 @@ export default function PotluckBevs(){
         setDrinks(data);
     }
 
-    async function handleAddDrink(){
-        console.log("Adding Drink...")
+    async function handleAddDrink(event){
+        event.preventDefault();
+        console.log("handle add drink submitted");
+        console.log( event.target.elements.serves.value)
+
+        const drinkName = event.target.elements.drinkName.value;
+        const yourName = event.target.elements.yourName.value;
+        const drinkType = event.target.elements.drinkType.value;
+        const serves = event.target.elements.serves.value;
+
+       let newDrink = {
+            drink_name : drinkName,
+            your_name : yourName,
+            guests_served : parseInt(serves),
+            drink_type : drinkType
+        }
+        
+        console.log(newDrink);
+        
+
     }
 
     return(
@@ -49,7 +67,7 @@ export default function PotluckBevs(){
                 {drinksDisplay}
             </ul>
             <div>
-                <form>
+                <form onSubmit={handleAddDrink}>
                     <label>
                         Drink: <input type="text" name="drinkName"></input>
                     </label>
