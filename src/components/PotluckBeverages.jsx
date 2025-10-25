@@ -56,7 +56,12 @@ export default function PotluckBevs(){
         
         console.log(newDrink);
         
-
+        const {data, error} = await supabase.from("potluck_beverages").insert(newDrink);
+        if (error){
+            console.log('Insertion failed: ', error)
+        } else {
+            console.log('Drink added successfully:' , data);
+        }
     }
 
     return(

@@ -63,6 +63,14 @@ export default function PotluckMeals(){
 
         console.log(newMeal);
 
+        const {data, error} = await supabase.from("potluck_meals").insert(newMeal);
+        if (error){
+            console.error('Insert failed: ', error);
+            //gives a user friendly error message if one occurs
+        } else {
+            console.log('Meal added successfully: ', data);
+            //update UI to show success, new line (row) will be added
+        }
     }
 
     return (
