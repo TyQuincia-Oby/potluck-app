@@ -1,6 +1,8 @@
 import {useState} from "react";
 import supabase from "../utils/supabase";
 
+//rls added when table was built
+
 export default function PotluckUtensils(){
     const [utensils, setUtensils] = useState([]);
 

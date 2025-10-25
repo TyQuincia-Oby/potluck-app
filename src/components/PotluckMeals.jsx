@@ -3,6 +3,8 @@ import supabase from "../utils/supabase";
 import PotluckBevs from "./PotluckBeverages";
 import PotluckUtensils from "./PotluckUtensils";
 
+//rls added when table was built
+
 export default function PotluckMeals(){
     const [meals,setMeals] = useState([]);
 

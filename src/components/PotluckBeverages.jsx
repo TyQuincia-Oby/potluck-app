@@ -1,5 +1,6 @@
 import {useState} from "react";
 import supabase from "../utils/supabase";
+//rls added when table was built
 
 export default function PotluckBevs(){
     const [drinks, setDrinks] = useState([]);
