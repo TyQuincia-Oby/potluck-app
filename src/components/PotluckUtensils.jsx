@@ -56,13 +56,19 @@ export default function PotluckUtensils(){
 
         console.log(newUtensil);
 
-       const {data, error} = await supabase.from("potluck_utensils").insert(newUtensil);
-       if (error){
-            console.log('Insertion failed: ', error);
-       } else {
-            console.log('Utensil added successfully: ', data);
-       }
+    //    const {data, error} = await supabase.from("potluck_utensils").insert(newUtensil);
+    //    if (error){
+    //         console.log('Insertion failed: ', error);
+    //    } else {
+    //         console.log('Utensil added successfully: ', data);
+    //    }
         //insert working properly
+        await supabase.from("potluck_utensils").insert(newUtensil);
+
+        //list update without refreshing screen
+        const response = await supabase.from("potluck_utensils").select();
+        const data = response.data;
+        setUtensils(data);
     }
 
 
