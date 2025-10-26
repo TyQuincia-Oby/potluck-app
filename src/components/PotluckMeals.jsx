@@ -106,11 +106,31 @@ export default function PotluckMeals(){
                     </label>
                     <br/>
                     <label>
-                        Serves: <input type="number" name="serves" />
+                        Serves: 
+                        <select name="serves" defaultValue="">
+                            <option value="" disabled>Select Number of Guests</option>
+                            <option value="20">20</option>
+                            <option value="40">40</option>
+                            <option value="60">60</option>
+                            <option value="80">80</option>
+                            <option value="100">100</option>
+                            {/* <option value="other">Other (Please Specify)</option> */}
+                        </select>
+                        {/* If someone wants to type in a specfic number other than listed in dropdown
+                        <input type="text" id="otherInput" style={{display: none}}placeholder="Specify other..."></input> */}
                     </label>
                     <br/>
                     <label>
-                        Kind of Dish: <input type="text" name="kindOfDish" />
+                        Kind of Dish: 
+                        <select name="kindOfDish" defaultValue="">
+                            <option value="" disabled>Select a kind</option>
+                            <option value="appetizer">Appetizer</option>
+                            <option value="entree">Entree</option>
+                            <option value="side">Side</option>
+                            <option value="snack">Snack</option>
+                            <option value="dessert">Dessert</option>
+                            <option value="drink">Drink</option>
+                        </select>
                     </label>
                     <br/>
                     <button type="submit">Add Meal</button>

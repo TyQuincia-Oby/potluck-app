@@ -74,7 +74,7 @@ export default function PotluckUtensils(){
         event.target.elements.yourName.value = "";
         event.target.elements.utensilName.value = "";
         event.target.elements.utensilType.value = "";
-        
+
     }
 
 
@@ -89,14 +89,29 @@ export default function PotluckUtensils(){
             <div>
                 <form onSubmit={handleAddUtensil}>
                     <label>
-                        Utensil: <input type="text" name="utensilName" />
+                        Utensil: 
+                        <select name="utensilName" defaultValue="">
+                            <option value="" disabled>Select a Utensil</option>
+                            <option value="forks">Forks</option>
+                            <option value="spoons">Spoons</option>
+                            <option value="knives">Knives</option>
+                            <option value="Spatula">Spatula</option>
+                            <option value="Tongs">Tongs</option>
+                        </select>
                     </label>
                     <br/>
                     <label>
                         Your Name: <input type="text" name="yourName" />
                     </label>
                     <br/>
-                        Used For: <input type="text" name="utensilType" />
+                    <label>
+                        Used For: 
+                        <select name="utensilType" defaultValue="">
+                            <option value="" disabled>Select a Type</option>
+                            <option value="serving">Serving</option>
+                            <option value="eating">Eating</option>
+                        </select>
+                    </label>
                     <br/>
                     <button type="submit">Add Utensil</button>
                 </form>

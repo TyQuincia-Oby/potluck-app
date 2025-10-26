@@ -92,11 +92,28 @@ export default function PotluckBevs(){
                     </label>
                     <br/>
                     <label>
-                        Serves: <input type="text" name="serves"></input>
+                        Serves: 
+                        <select name="serves" defaultValue="">
+                            <option value="" disabled>Select Number of Guests</option>
+                            <option value="20">20</option>
+                            <option value="40">40</option>
+                            <option value="60">60</option>
+                            <option value="80">80</option>
+                            <option value="100">100</option>
+                        </select>
                     </label>
                     <br/>
                     <label>
-                        Type of Drink: <input type="text" name="drinkType"></input>
+                        Type of Drink: 
+                        <select name="drinkType" defaultValue="">
+                            <option value="" disabled>Select Drink Type</option>
+                            <option value="water">Water</option>
+                            <option value="juice">Juice</option>
+                            <option value="softDrink">Soft Drink</option>
+                            <option value="milk-based">Milk-Based</option>
+                            <option value="specialty">Specialty Drink</option>
+                            <option value="coffentea">Coffee or Tea</option>
+                        </select>
                     </label>
                     <br/>
                     <button type="submit">Add Drink</button>
