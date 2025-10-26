@@ -69,6 +69,12 @@ export default function PotluckUtensils(){
         const response = await supabase.from("potluck_utensils").select();
         const data = response.data;
         setUtensils(data);
+
+        //clear forms after submitting
+        event.target.elements.yourName.value = "";
+        event.target.elements.utensilName.value = "";
+        event.target.elements.utensilType.value = "";
+        
     }
 
 

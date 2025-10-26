@@ -65,6 +65,12 @@ export default function PotluckBevs(){
         const data = response.data;
         setDrinks(data);
 
+        //clear form after submitting
+        event.target.elements.yourName.value = "";
+        event.target.elements.drinkName.value = "";
+        event.target.elements.drinkType.value = "";
+        event.target.elements.serves.value = "";
+
     }
 
     return(
