@@ -1,16 +1,40 @@
-# React + Vite
+# Potluck Management Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+- Select dropdowns
+- CRUD 
+    - Create new rows
+    - Read list
+    - Update List
+    - Delete (coming soon)
+- Drink condition when "drink" is selected in meal type select dropdown
+- Utensil condition when meal is submitted
 
-Currently, two official plugins are available:
+## Technologies
+- React 19
+- Vite
+- CSS
+- JavaScript ES6+
+- Supabase
+- Netlify
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+bash 
+run command: npm install
 
-## React Compiler
+## Running the Application
+run command: npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Utilizing the Application
+User will initially see the potluck meal insertion page with the form. After insertion, the list of other meals will appear and the utensils page will prompt user to bring a utensil.
 
-## Expanding the ESLint configuration
+If user decides to bring a drink, the drink page (component) will pop up.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## What I learned
+- Creating and updating lists with Supabase (list in Supabase also updated with selected after insert)
+- Ordering list items in javascript with order()
+- Clearing targeted forms after submitting to ensure user can keep adding rows into database
+
+
+
+https://potluckapp.netlify.app/
