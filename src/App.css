@@ -1,3 +1,37 @@
 body{
   color: black;
+  background-color: #DD614A;
+}
+
+.allMeals{
+  text-align: left;
+  list-style: square;
+  list-style-position: inside;
+  background-color: #F4A698 ;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 25px;
+
+}
+
+label {
+  margin: 10px;
+}
+
+
+form {
+  background-color: #F4A698 ;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 25px;
+  border: black;
+  border-width: 3px;
+  box-shadow: black 10px;
+}
+
+.card {
+ background-color: #73A580;
+ padding: 25px;
+ margin: 30px;
+  
 }

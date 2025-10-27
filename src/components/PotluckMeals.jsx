@@ -85,13 +85,20 @@ export default function PotluckMeals(){
         event.target.elements.kindOfDish.value = "";
         event.target.elements.serves.value = "";
 
+        setMealAdded(true);
+        setSelectedDishType("");
     }
+
+    const [selectedDishType, setSelectedDishType] = useState("");
+    const [mealAdded, setMealAdded] = useState(false);
+
 
     return (
         <>
-            <h1>Welcome to Our Potluck Meals App!!</h1>
-            <button onClick={handleFetchMeals}>Fetch Meal List</button>
-            <ul>
+            <div className="card">
+            <h1 className="card-title">Welcome to Our Potluck Meals App!!</h1>
+            <button className="btn btn-warning" onClick={handleFetchMeals}>Fetch Meal List</button>
+            <ul className="allMeals">
                 {/* Display list of meals */}
                 {mealsDisplay}
             </ul>
@@ -122,7 +129,10 @@ export default function PotluckMeals(){
                     <br/>
                     <label>
                         Kind of Dish: 
-                        <select name="kindOfDish" defaultValue="">
+                        <select name="kindOfDish"
+                        value={selectedDishType}
+                        onChange={(e) => setSelectedDishType(e.target.value)}
+                        >
                             <option value="" disabled>Select a kind</option>
                             <option value="appetizer">Appetizer</option>
                             <option value="entree">Entree</option>
@@ -133,13 +143,14 @@ export default function PotluckMeals(){
                         </select>
                     </label>
                     <br/>
-                    <button type="submit">Add Meal</button>
+                    <button className="btn btn-warning" type="submit">Add Meal</button>
                 </form>
             </div>
             {/* Utensil and Beverage components */}
-            <PotluckUtensils />
-            <PotluckBevs />
-
+            {/* Conditional statement for when drink option is chosen */}
+            {selectedDishType === "drink" && <PotluckBevs />}
+            {mealAdded && <PotluckUtensils />}
+            </div>
         </>
     );
 
